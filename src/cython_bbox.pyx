@@ -9,8 +9,9 @@ cimport cython
 import numpy as np
 cimport numpy as np
 
-DTYPE = np.float
-ctypedef np.float_t DTYPE_t
+# Change DTYPE from np.float to float
+DTYPE = float
+ctypedef float_t DTYPE_t
 
 def bbox_overlaps(
         np.ndarray[DTYPE_t, ndim=2] boxes,
@@ -53,3 +54,4 @@ def bbox_overlaps(
                     )
                     overlaps[n, k] = iw * ih / ua
     return overlaps
+
